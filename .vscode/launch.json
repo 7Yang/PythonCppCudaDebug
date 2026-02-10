@@ -1,0 +1,31 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name"      : "Python Debug: Launch",                                 // name
+            "type"      : "debugpy",                                              // python debug type
+            "request"   : "launch",                                               // launch
+            "program"   : "${workspaceFolder}/pyround.py",                        // python file
+            "justMyCode": false                                                   // F11 debug step in
+        },
+        {
+            "name"      : "C++ Debug: Launch",                                     // name
+            "type"      : "cppdbg",                                                // c++ debug type
+            "request"   : "launch",                                                // launch python executable
+            "cwd"       : "${workspaceFolder}",                                    // workspace
+            "args"      : ["${workspaceFolder}/pyround.py"],                       // python file
+            "program"   : "/home/yang/miniconda3/envs/CudaSamples/bin/python3.13", // python executable path
+        },
+        {
+            "name"      : "CUDA Debug: Launch",                                    // name
+            "type"      : "cuda-gdb",                                              // cuda debug type
+            "request"   : "launch",                                                // launch python executable
+            "cwd"       : "${workspaceFolder}",                                    // workspace
+            "program"   : "/home/yang/miniconda3/envs/CudaSamples/bin/python3.13", // python executable path
+            "args"      : "${workspaceFolder}/pyround.py",                         // python file
+        },
+    ]
+}
